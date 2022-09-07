@@ -1,0 +1,266 @@
+:root {
+ --normal: #AAA67F;
+ --fighting: #C12239;
+ --flying: #A891EC;
+ --ground: #DEC16B;
+ --poison: #A43E9E;
+ --rock: #B69E31;
+ --bug: #A7B723;
+ --ghost: #70559B;
+ --steel: #B7B9D0;
+ --fire: #F57D31;
+ --water: #6493EB;
+ --grass: #74CB48;
+ --electric: #F9CF30;
+ --psychic: #FB5584;
+ --ice: #9AD6DF;
+ --dragon: #7037FF;
+ --dark: #75574C;
+ --fairy: #E69EAC; 
+}
+body {
+  --tw-bg-opacity: 1;
+  background-color: rgb(191 219 254 / var(--tw-bg-opacity));
+  font-size:16px;
+}
+.un-selectable{
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+
+  /*
+    Introduced in IE 10.
+    See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+  */
+  -ms-user-select: none;
+  user-select: none;
+}
+.navigate-btn{
+  position:absolute;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding:6px;
+  border-radius: 5px;
+  height:24px;
+  text-decoration: none;
+  color: #000;
+}
+.btn-type {
+  min-width: 29px;
+  display:inline-block;
+  padding: 1px 5px;
+  text-align:center;
+  text-transform:capitalize;
+  margin-top:1px;
+}
+.svg-white path{
+  fill: #fff;
+}
+.svg-red img > path:hover{
+  fill: #ff0000;
+}
+.opacity-20 {
+  background: #ffffff80;
+}
+/* Poppins Regular */
+.text-regular { 
+  font-family: 'Poppins';
+  font-style: normal;
+  letter-spacing: .6px;
+}
+/* Poppins Regular 8 */
+.regular-8 { 
+  font-size: .5rem;
+  line-height: .75rem;
+}
+/* Poppins Regular 10 */
+.regular-10 {
+  font-size: .625rem;
+  line-height: 1rem;
+}
+/* Poppins Regular 12 */
+.regular-12 {
+  font-size: 12px;
+  line-height: 1rem;
+}
+/* Poppins Regular 14 */
+.regular-14 {
+  font-size: .875rem;
+  line-height: 1rem;
+}
+/* Poppins Regular 18 */
+.regular-18 {
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+}
+/* Poppins Regular 24 */
+.regular-24 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+/* Background colors */
+.normal {
+  background: var(--normal);
+  color:black;
+}
+
+.fighting {
+  background: var(--fighting);
+  color:white;
+}
+
+.flying {
+  background: var(--flying);
+  color:black;
+}
+
+.ground {
+  background: var(--ground);
+  color:black;
+}
+
+.poison {
+  background: var(--poison);
+  color:white;
+}
+
+.rock {
+  background: var(--rock);
+  color:black;
+}
+
+.bug {
+  background: var(--bug);
+  color:black;
+}
+
+.ghost {
+  background: var(--ghost);
+  color:white;
+}
+
+.steel {
+  background: var(--steel);
+  color:black;
+}
+
+.fire {
+  background: var(--fire);
+  color:black;
+}
+
+.water {
+  background: var(--water);
+  color:black;
+}
+
+.grass {
+  background: var(--grass);
+  color:black;
+}
+
+.electric {
+  background: var(--electric);
+  color:black;
+}
+
+.psychic {
+  background: var(--psychic);
+  color:black;
+}
+
+.ice {
+  background: var(--ice);
+  color:black;
+}
+
+.dragon {
+  background: var(--dragon);
+  color:white;
+}
+
+.dark {
+  background: var(--dark);
+  color:white;
+}
+
+
+.fairy {
+  background: var(--fairy);
+  color:black;
+}
+
+/* Text colors */
+.text-normal {
+  color: var(--normal);
+}
+
+.text-fighting {
+  color: var(--fighting);
+}
+
+.text-flying {
+  color: var(--flying);
+}
+
+.text-ground {
+  color: var(--ground);
+}
+
+.text-poison {
+  color: var(--poison);
+}
+
+.text-rock {
+  color: var(--rock);
+}
+
+.text-bug {
+  color: var(--bug);
+}
+
+.text-ghost {
+  color: var(--ghost);
+}
+
+.text-steel {
+  color: var(--steel);
+}
+
+.text-fire {
+  color: var(--fire);
+}
+
+.text-water {
+  color: var(--water);
+}
+
+.text-grass {
+  color: var(--grass);
+}
+
+.text-electric {
+  color: var(--electric);
+}
+
+.text-psychic {
+  color: var(--psychic);
+}
+
+.text-ice {
+  color: var(--ice);
+}
+
+.text-dragon {
+  color: var(--dragon);
+}
+
+.text-dark {
+  color: var(--dark);
+}
+
+.text-fairy {
+  color: var(--fairy);
+}
