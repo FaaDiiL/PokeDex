@@ -31,6 +31,8 @@ const Card = ( props: any ) =>
                          #{id}
                     </p>
                </div>
+
+               {/* Nav-Arrows Prev & Next and pokemon-img  */}
                <div className='flex relative z-10 mt-6 -mb-[50px] transparant'>
                     <div
                          onClick={handlePrevAndNextButton}
@@ -64,7 +66,8 @@ const Card = ( props: any ) =>
                     </div>
                </div>
 
-               <div className='z-0 p-1 rounded-[12px] mx-1 mb-1 bg-slate-50'>
+               {/* Pokemon info Section */}
+               <section className='z-0 p-1 rounded-[12px] mx-1 mb-1 bg-slate-50'>
                     <div className='w-full overflow-hidden'>
                          <div className='px-6 rounded-[8px]'>
                               {/** Pokemon Types */}
@@ -139,7 +142,7 @@ const Card = ( props: any ) =>
                               </div>
 
                               {/** Pokemon Base Stats */}
-                              <div className='mb-4 '>
+                              <section className='mb-4 '>
                                    <h3
                                         className={`flex justify-center text-${ types[0].type.name } text-regular regular-18 font-bold align-center mb-5`}
                                    >
@@ -174,10 +177,10 @@ const Card = ( props: any ) =>
                                              </div>
                                         )
                                    )}
-                              </div>
+                              </section>
                          </div>
                     </div>
-               </div>
+               </section>
           </div>
      )
 }

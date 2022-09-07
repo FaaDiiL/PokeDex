@@ -6,7 +6,7 @@
   width: 0;
   position: absolute;
   top: 15px;
-  opacity: .80;
+  opacity: .70;
   -webkit-transform:scale(0.4);
   -moz-transform:scale(0.4);
   -ms-transform:scale(0.4);
@@ -24,7 +24,7 @@
 }
 
 .pokemon::before {
-  content: 'Loading';
+  content: '';
   position: absolute;
   height: 16px;
   width: 90px;
@@ -34,7 +34,7 @@
 }
 
 .pokemon::after {
-  content: 'Loading';
+  content: '';
   position: absolute;
   height: 38px;
   width: 38px;

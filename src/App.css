@@ -18,10 +18,10 @@
  --dark: #75574C;
  --fairy: #E69EAC; 
 }
-body {
+html {
   --tw-bg-opacity: 1;
   background-color: rgb(191 219 254 / var(--tw-bg-opacity));
-  font-size:16px;
+  font-size: 15px;
 }
 .un-selectable{
   -moz-user-select: -moz-none;

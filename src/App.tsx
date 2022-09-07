@@ -6,8 +6,6 @@ import { IPokemonData } from './interfaces';
 import { ReactComponent as Pokeball } from './assets/images/pokeball.svg';
 import SearchBar from './SearchBar';
 import axios from 'axios';
-
-
 function App()
 {
   const [isLoading, setIsLoading] = useState<boolean>( false );
@@ -34,12 +32,10 @@ function App()
   const handleInputSearchQuery = ( e: any ) =>
   {
     e.preventDefault();
+    setHasError( false )
     if ( searchQuery === inputState || inputState === '' ) return
     setSearchQuery( prev => prev = inputState );
-    setIsLoading( true );
   }
-
-
 
   /*  Fires on prev | next button click */
   const handlePrevAndNextButton = ( e: any ) =>
@@ -55,10 +51,6 @@ function App()
     }
   }
 
-
-
-
-
   /* initial effect */
   useLayoutEffect( () =>
   {
@@ -70,8 +62,7 @@ function App()
 
   useLayoutEffect( () =>
   {
-  setIsLoading(true)
-    setIsLoading( prev => prev = true )
+    setIsLoading( true )
     const fetchData = async () =>
     {
 
@@ -89,68 +80,60 @@ function App()
             if ( res.status !== 404 ) {
               data.sprites.front_default = data.sprites.front_default = `https://cdn.traction.one/pokedex/pokemon/${ data.id }.png`;
               setFetchedPokemon( ( prev: IPokemonData ) => prev = data );
-          setIsLoading(false)
+              setIsLoading( false )
 
             }
             else {
               setFetchedPokemon( ( prev: IPokemonData ) => prev = data );
-          setIsLoading(true)
-
+              setIsLoading( false )
             }
           } )
-
-          setIsLoading(false)
+          setIsLoading( false )
           setHasError( false );
         }
       } catch ( error ) {
-        setIsLoading( prev => prev = false );
-        console.log( error )
         setHasError( true );
         setFetchedPokemon( null );
       }
+      setIsLoading( false );
     };
 
     if ( isLoading ) {
       fetchData();
-      setIsLoading( true );
-    }
-    
-
-    return () =>
-    {
       setIsLoading( false );
     }
+
+
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchQuery, hasError, fetchedPokemon] );
 
-
-
   return (
-    <div className="mt-10">
-      {/* Search by Id || Name*/}
-      <div className=" w-[352px] mx-auto">
-        <SearchBar handleInputChange={handleInputChange} handleInputSearchQuery={handleInputSearchQuery} />
-      </div>
+      <div className="relative mt-10">
+      
+        {/* Search by Id || Name*/}
+        <div className=" w-[352px] mx-auto">
+          <SearchBar handleInputChange={handleInputChange} handleInputSearchQuery={handleInputSearchQuery} />
+        </div>
 
-      {/* Pokemon card-wrapper*/}
-      <div className={`relative rounded-lg w-[22.5rem] mx-auto my-10 ${ fetchedPokemon?.types[0].type.name } outline outline-[12px] outline-white  `} >
+        {/* Pokemon card-wrapper*/}
+        <div className={`relative rounded-lg w-[352px] mx-auto my-10 ${ fetchedPokemon?.types[0].type.name } outline outline-[12px] outline-white  `} >
 
-        {/** Pokeball transparent */}
-        <Pokeball className="w-[208px] h-[208px] svg-white absolute top-[8px] right-[8px] opacity-10" />
+          {/** Pokeball transparent */}
+          <Pokeball className="w-[352px] h-[208px] svg-white absolute top-[8px] right-[8px] opacity-10" />
 
-        {/** This is the pokemon data  */}
-        <div className="relative flex flex-col align-center justify-center">
-          {!isLoading && (<span className="pokemon-wrapper ">
-            <div className="pokemon"></div>
-          </span>)}
-          {hasError && <p>could not find the pokémon Try another one.</p>}
-          {fetchedPokemon && (
-            <Card pokemonData={fetchedPokemon} handlePrevAndNextButton={handlePrevAndNextButton} />
-          )}
+          {/** This is the pokemon data  */}
+          <div className="relative flex flex-col align-center justify-center">
+          {!isLoading && ( <span className="absolute top-0 left-0 pokemon-wrapper ">
+              <div className="pokemon"></div>
+            </span> )}
+            {hasError && <p>could not find the pokémon Try another one.</p>}
+            {fetchedPokemon && (
+              <Card pokemonData={fetchedPokemon} handlePrevAndNextButton={handlePrevAndNextButton} />
+              )}
+          </div>
         </div>
       </div>
-    </div>
-
   );
 }
 
